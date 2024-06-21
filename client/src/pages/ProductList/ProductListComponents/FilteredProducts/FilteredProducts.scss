@@ -1,0 +1,21 @@
+@use "../../../../styles/mixins.scss";
+@import "../../../../styles/variables";
+
+.products-list {
+  @media (min-width: 576px){
+    margin-right: 120px;
+  }
+  @media (max-width: 576px){
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  .card-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    @media (max-width: 576px){
+      gap: 24px;
+      justify-content: space-between;
+    }
+  }
+}

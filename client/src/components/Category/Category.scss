@@ -1,0 +1,46 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables";
+
+.category {
+  padding: 80px 120px 22px 120px;
+  @include flex($direction: column, $gap: 52px);
+
+  @media (max-width: 576px) {
+    padding: 60px 24px 100px 24px;
+  }
+
+  .category-header {
+    @include flex($align: center, $justify: space-between);
+
+    h2 {
+      @include font($color: $Black-01, $size: 38px, $weight: 600);
+
+      @media (max-width: 576px) {
+        @include font($size: 18px);
+      }
+    }
+
+    button {
+      @include flex($align: center, $justify: center, $gap: 10px);
+      @include font($color: $Dark-Green-01, $size: 18px, $weight: 600);
+      @include container($border-r: 8px, $border: 1px solid $Dark-Green-01, $background: $White-General);
+      padding: 10px 16px;
+      text-align: center;
+
+      @media (max-width: 576px) {
+        padding: 6px 12px;
+        @include font($size: 14px);
+      }
+
+    }
+  }
+
+  .cards {
+    @include flex($align: center, $justify: space-between, $gap: 24px);
+
+    @media (max-width: 576px) {
+      column-gap: 16px;
+      overflow: scroll;
+    }
+  }
+}

@@ -1,0 +1,155 @@
+@use "../../../../../styles/mixins.scss";
+@import "../../../../../styles/variables";
+
+.review-chart {
+  margin-bottom: 24px;
+
+  h4 {
+    color: $Black-01;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: -0.2px;
+    margin-bottom: 24px;
+
+    @media (max-width: 576px) {
+      font-size: 16px;
+    }
+  }
+
+  .review-bar {
+    @include mixins.flex-center;
+    align-items: flex-start;
+    border-radius: 12px;
+    border: 1px solid $dGrey-01;
+    padding: 24px;
+    justify-content: space-between;
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      padding: 16px;
+      row-gap: 24px;
+    }
+
+    .summary {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+
+      .rating-circle {
+        position: relative;
+        margin-right: 10px;
+
+        svg {
+          display: block;
+
+          circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(10deg);
+            transform-origin: 50% 50%;
+          }
+        }
+
+        text {
+          font-weight: bold;
+
+          @media (max-width: 576px) {
+            font-size: 18px;
+          }
+        }
+      }
+
+      .rating-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .stars {
+          margin-right: 4px;
+
+          img {
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        .reviews {
+          color: $Black-01;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 160%;
+
+          @media (max-width: 576px) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .breakdown {
+      width: 70%;
+
+      @media (max-width: 576px) {
+        width: 100%;
+      }
+
+      .breakdown-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        .star-label {
+          width: 40px;
+          text-align: right;
+          margin-right: 4px;
+          color: $Black-01;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 160%;
+
+          @media (max-width: 576px) {
+            font-size: 12px;
+          }
+        }
+
+        img {
+          margin-right: 24px;
+
+          @media (max-width: 576px) {
+            margin-right: 12px;
+            width: 16px;
+          }
+        }
+
+        .bar {
+          flex: 1;
+          height: 8px;
+          background: #e0e0e0;
+          border-radius: 5px;
+          margin-right: 10px;
+          position: relative;
+          overflow: hidden;
+
+          .filled {
+            height: 8px;
+            background: #4caf50;
+          }
+        }
+
+        .count {
+          width: 40px;
+          text-align: left;
+          color: $Black-01;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 160%;
+
+          @media (max-width: 576px) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+  }
+}

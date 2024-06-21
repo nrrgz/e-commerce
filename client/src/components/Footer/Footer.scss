@@ -1,0 +1,130 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables";
+
+.footer-wrapper {
+  @include container($background: $dGrey-03);
+
+  .footer-content {
+    @include flex($align: flex-start);
+    padding: 80px 120px 52px 120px;
+
+    @media (max-width: 576px) {
+      @include flex($direction: column);
+      padding: 40px 24px 40px 24px;
+    }
+
+    .footer-links {
+      @include flex($align: flex-start, $gap: 80px);
+
+      @media (max-width: 576px) {
+        @include flex($gap: 65px);
+        flex-wrap: wrap;
+      }
+
+      .footer-link {
+        @include flex($direction: column, $align: flex-start);
+        @include container($width: 25%);
+
+        @media (max-width: 576px) {
+          @include container($width: 30%);
+        }
+
+        &:nth-child(4) {
+          li {
+            &:nth-child(2) {
+              border-bottom: 1px solid $dGrey-01;
+              padding-bottom: 12px;
+            }
+          }
+        }
+
+        .footer-link-title {
+          @include font($color: $Black-01, $size: 20px, $weight: 600);
+          margin-bottom: 16px;
+
+          @media (max-width: 576px) {
+            @include font($size: 16px);
+          }
+        }
+
+        li {
+          list-style-type: none;
+          margin-bottom: 12px;
+
+          a {
+            @include font($color: $Black-01, $size: 16px, $weight: 400);
+            text-decoration: none;
+
+            @media (max-width: 576px) {
+              @include font($size: 14px);
+            }
+          }
+        }
+      }
+    }
+
+
+    .footer-about {
+      @include flex($gap: 28px, $direction: column);
+      @include container($width: 33%);
+      margin-right: 96px;
+
+      @media (max-width: 576px) {
+        @include container($width: 100%);
+        @include flex($gap: 16px);
+        margin-bottom: 32px;
+        margin-right: 0;
+      }
+
+      .footer-logo {
+        @include flex($align: center, $gap: 10px);
+
+        .footer-logo-image {
+          @include flex($align: center, $justify: center);
+          @include container($width: 39.077px, $height: 39.077px, $background: $Dark-Green-01, $border-r: 10px);
+
+          img {
+            @include container($width: 21.981px, $height: 19.538px);
+          }
+        }
+
+        p {
+          @include font($color: $Black-01, $size: 29.308px, $weight: 600, $height: 28px);
+        }
+      }
+    }
+  }
+
+
+  .footer-bottom {
+    @include flex($align: center, $justify: space-between);
+    @include container($background: $lGrey-01);
+    padding: 16px 120px 16px 120px;
+
+    @media (max-width: 576px) {
+      @include flex($direction: column, $gap: 12px);
+      padding: 16px 23px 16px 23px;
+    }
+
+    p {
+      @include font($color: $Black-01, $size: 16px, $weight: 400);
+
+      @media (max-width: 576px) {
+        @include font($size: 14px);
+      }
+    }
+
+    .footer-copyright {
+      @include flex($align: center, $gap: 32px);
+
+      a {
+        @include font($color: $Black-01, $size: 16px, $weight: 400);
+        text-decoration: none;
+
+        @media (max-width: 576px) {
+          @include font($size: 14px);
+        }
+      }
+    }
+  }
+}

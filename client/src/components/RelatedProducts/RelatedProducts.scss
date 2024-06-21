@@ -1,0 +1,36 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables";
+
+.related-product {
+  margin: 32px 120px 120px 120px;
+
+  @media (max-width:576px) {
+    margin: 24px 24px 56px 24px;
+  }
+
+  .related-product-header {
+    @include flex($align: center, $justify: space-between);
+    margin-bottom: 32px;
+
+    h2 {
+      @include font($color: $Black-01, $size: 20px, $weight: 600, $height: 140%);
+      letter-spacing: -0.2px;
+    }
+
+    button {
+      @include flex($align: center, $justify: center, $gap: 10px);
+      @include container($border: 1px solid $Dark-Green-01, $border-r: 8px, $background: none);
+      @include font($color: $Dark-Green-01, $size: 16px, $weight: 600, $height: 140%);
+      padding: 8px 16px;
+      text-align: center;
+      letter-spacing: -0.2px;
+    }
+  }
+
+  .card-related-product {
+    .card-products {
+      @include flex($align: center, $justify: space-between, $gap: 24px);
+      flex-wrap: wrap;
+    }
+  }
+}

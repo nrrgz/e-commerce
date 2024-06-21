@@ -1,0 +1,115 @@
+@use "../../../../styles/mixins.scss";
+@import "../../../../styles/variables";
+
+.debit-card-form {
+  padding: 32px 24px 24px 24px;
+  border-radius: 12px;
+  border: 1px solid $dGrey-01;
+
+  @media (max-width: 576px) {
+    padding: 16px;
+  }
+
+  h2 {
+    color: $Black-01;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: -0.2px;
+    margin-bottom: 24px;
+
+    @media (max-width: 576px) {
+      font-size: 16px;
+    }
+  }
+
+  .form-group-container {
+    @include mixins.flex-center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 32px;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+      width: 49%;
+
+      @media (max-width: 576px) {
+        width: 100%;
+      }
+
+      label {
+        color: $Black-01;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 140%;
+        letter-spacing: -0.2px;
+
+        @media (max-width: 576px) {
+          font-size: 14px;
+        }
+      }
+
+      input {
+        @include mixins.flex-center;
+        padding: 10px 16px;
+        gap: 10px;
+        align-self: stretch;
+        border-radius: 12px;
+        border: 1px solid $dGrey-01;
+        color: $Grey-01;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 160%;
+      }
+    }
+  }
+
+  .form-buttons {
+    @include mixins.flex-center;
+    gap: 16px;
+    justify-content: flex-end;
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+    }
+
+    .cancel-button,
+    .checkout-button {
+      @include mixins.flex-center;
+      width: 160px;
+      height: 46px;
+      padding: 14px 10px;
+      justify-content: center;
+      border-radius: 8px;
+      border: none;
+
+      @media (max-width: 576px) {
+        width: 305px;
+      }  
+    }
+
+    .cancel-button {
+      color: $Black-01;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 140%;
+      letter-spacing: -0.2px;
+      background: $dGrey-01;
+    }
+
+    .link {
+      text-decoration: none;
+      
+      .checkout-button {
+        color: $White-General;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 140%;
+        letter-spacing: -0.2px;
+        background: $Dark-Green-01;
+      }
+    }
+  }
+}

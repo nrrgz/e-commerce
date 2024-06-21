@@ -1,0 +1,43 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/variables";
+
+.category-card {
+  @include flex($align: center, $justify: center, $direction: column);
+  @include container($width: 180px, $height: 198px, $border: 2px solid $dGrey-01, $border-r: 12px);
+  padding: 35px 0 31px 0;
+
+  @media (max-width: 576px) {
+    @include container($width: 120px, $height: 126px);
+    padding: 24px;
+  }
+
+  img {
+    @include container($width: 52px, $height: 52px);
+    margin-bottom: 24px;
+
+    @media (max-width: 576px) {
+      @include container($width: 32px, $height: 32px);
+      margin-bottom: 8px;
+    }
+  }
+
+  .category-title {
+    @include font($color: $Black-01, $size: 20px, $weight: 600);
+    text-align: center;
+
+    @media (max-width: 576px) {
+      @include font($size: 14px);
+      @include container($width: 100px);
+    }
+  }
+
+  .category-products {
+    @include font($size: 16px, $weight: 400, $color: $Grey-01);
+    text-align: center;
+
+    @media (max-width: 576px) {
+      @include font($size: 12px);
+      @include container($width: 100px);
+    }
+  }
+}

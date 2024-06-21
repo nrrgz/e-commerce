@@ -1,0 +1,93 @@
+@use "../../styles/mixins.scss";
+@import "../../styles/variables";
+
+.success {
+  .success-container {
+    margin: 172px 420px;
+    @include mixins.flex-center;
+    flex-direction: column;
+
+    @media (max-width: 576px) {
+      margin: 60px 24px;
+    }
+
+    img {
+      margin-bottom: 32px;
+
+      @media (max-width: 576px) {
+        width: 84px;
+        height: 84px;
+        margin-bottom: 24px;
+      }
+    }
+
+    h1 {
+      color: $Black-01;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 140%;
+      letter-spacing: -0.2px;
+      margin-bottom: 12px;
+      text-align: center;
+
+      @media (max-width: 576px) {
+        font-size: 18px;
+      }
+    }
+
+    p {
+      color: $Grey-01;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 160%;
+      text-align: center;
+      margin-bottom: 32px;
+
+      @media (max-width: 576px) {
+        font-size: 12px;
+      }
+    }
+
+    .success-buttons {
+      @include mixins.flex-center;
+      column-gap: 16px;
+
+      @media (max-width: 576px) {
+        flex-direction: column;
+        row-gap: 16px;
+      }
+
+      button {
+        @include mixins.flex-center;
+        width: 160px;
+        height: 46px;
+        padding: 14px 10px;
+        justify-content: center;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 140%;
+        letter-spacing: -0.2px;
+
+        @media (max-width: 576px) {
+          font-size: 14px;
+          width: 327px;
+        }
+      }
+
+      .link {
+        text-decoration: none;
+      .back-to-home {
+        color: $White-General;
+        background: $Dark-Green-01;
+      }
+      }
+
+      .check-detail {
+        color: $Black-01;
+        background: $dGrey-01;
+      }
+    }
+  }
+}

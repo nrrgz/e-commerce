@@ -1,0 +1,100 @@
+@use "../../../../styles/mixins.scss";
+@import "../../../../styles/variables";
+
+.banner-wrapper {
+  @include mixins.flex-center;
+  justify-content: space-between;
+  background: $dGrey-02;
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .main-banner {
+    display: flex;
+    flex-direction: column;
+    padding-left: 120px;
+
+    @media (max-width: 576px) {
+      padding: 52px 24px 0 24px;
+    }
+
+    h1 {
+      color: $Black-01;
+      font-size: 58px;
+      font-weight: 700;
+      margin-bottom: 16px;
+
+      @media (max-width: 576px) {
+        font-size: 28px;
+      }
+    }
+
+    p {
+      color: $Grey-01;
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 32px;
+
+      @media (max-width: 576px) {
+        font-size: 14px;
+      }
+    }
+
+    .banner-buttons {
+      @include mixins.flex-center;
+      column-gap: 16px;
+
+      @media (max-width: 576px) {
+        flex-direction: column;
+        row-gap: 16px;
+      }
+
+      button {
+        @include mixins.flex-center;
+        width: 200px;
+        padding: 14px 10px;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 8px;
+
+        @media (max-width: 576px) {
+          width: 327px;
+          height: 48px;
+          padding: 12px 10px;
+        }
+      }
+
+      .button-buy {
+        background: $Dark-Green-01;
+        border: none;
+        color: $White-General;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .button-detail {
+        border: 1px solid $Dark-Green-01;
+        color: $Dark-Green-01;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 600;
+        background: $White-General;
+      }
+    }
+  }
+
+  .banner-img {
+    img {
+      height: 620px;
+      max-width: 827px;
+      
+      @media (max-width: 576px) {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

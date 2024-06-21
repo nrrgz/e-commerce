@@ -1,0 +1,217 @@
+@use "../../../../../styles/mixins.scss";
+@import "../../../../../styles/variables";
+
+.review-list {
+  @media (min-width: 576px) {
+    margin: 0 0 32px 40px;
+    width: 75%;
+  }
+
+  h4 {
+    color: $Black-01;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: -0.2px;
+    margin-bottom: 16px;
+
+    @media (max-width: 576px) {
+      font-size: 16px;
+    }
+  }
+
+  .review-buttons {
+    @include mixins.flex-center;
+    align-items: flex-start;
+    column-gap: 12px;
+    margin-bottom: 32px;
+    justify-content: space-between;
+
+    .review-btns {
+      @include mixins.flex-center;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      button {
+        display: flex;
+        padding: 11px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        border-radius: 8px;
+        border: 1px solid $Grey-01;
+        background: none;
+        color: $Black-01;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 160%;
+
+        @media (max-width: 576px) {
+          font-size: 12px;
+          white-space: nowrap;
+          padding: 10px;
+        }
+      }
+
+      .add-review {
+        border: 1px solid $Dark-Green-03;
+        color: $Dark-Green-03;
+      }
+    }
+
+    .filter-review {
+      display: flex;
+      padding: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      border-radius: 8px;
+      border: 1px solid $Grey-01;
+      background: none;
+      color: $Black-01;
+
+      @media (min-width: 576px) {
+        display: none;
+      }
+    }
+  }
+
+  .product-comment.last {
+      padding-bottom: 0
+    }
+
+  .product-comment {
+    @include mixins.flex-center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid $dGrey-01;
+
+    @media (max-width: 576px) {
+      align-items: flex-end;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .review-comment {
+      .comment-stars {
+        margin-right: 4px;
+        margin-bottom: 16px;
+
+        @media (max-width: 576px) {
+          margin-bottom: 12px;
+        }
+
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .comment {
+        color: $Black-01;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 140%;
+        letter-spacing: -0.2px;
+        margin-bottom: 4px;
+
+        @media (max-width: 576px) {
+          font-size: 14px;
+        }
+      }
+
+      .date {
+        color: $Grey-01;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 160%;
+        margin-bottom: 24px;
+
+        @media (max-width: 576px) {
+          font-size: 12px;
+        }
+      }
+
+      .user-profile {
+        @include mixins.flex-center;
+        column-gap: 12px;
+
+        @media (max-width: 576px) {
+          column-gap: 8px;
+        }
+
+        img {
+          @media (max-width: 576px) {
+            width: 24px;
+            height: 24px;
+          }
+        }
+
+        p {
+          color: $Black-01;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 160%;
+
+          @media (max-width: 576px) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .feedback-buttons {
+      @include mixins.flex-center;
+      column-gap: 16px;
+
+      .like-button,
+      .dislike-button {
+        @include mixins.flex-center;
+        column-gap: 8px;
+        width: 80px;
+        padding: 12px;
+        justify-content: center;
+        border-radius: 4px;
+        border: 1px solid $dGrey-01;
+
+        img {
+          @media (max-width: 576px) {
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        @media (max-width: 576px) {
+          border-radius: 8px;
+          height: 32px;
+          padding: 10px;
+          gap: 10px;
+        }
+
+        p {
+          font-size: 16px;
+          font-weight: 400;
+
+          @media (max-width: 576px) {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .dislike-button {
+        background: none;
+        width: auto;
+
+        img {
+          @media (max-width: 576px) {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+@use "../../../../styles/mixins.scss";
+@import "../../../../styles/variables";
+
+.promo-banner {
+  @include mixins.flex-center;
+  border-radius: 16px;
+  background: $Orange-03;
+  margin: 100px 120px 100px 120px;
+  padding: 0px 135px 0px 80px;
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    padding: 32px 24px 21px 24px;
+    align-items: flex-start;
+    margin: 100px 24px 100px 24px;
+  }
+
+  .promo-banner-img {
+    img {
+      width: 382px;
+      height: 430px;
+      flex-shrink: 0;
+
+      @media (max-width: 576px) {
+        width: 157px;
+        height: 176px;
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  .promo-banner-content {
+    @media (min-width: 576px) {
+      margin-left: 120px;
+    }
+
+    .promo-banner-title {
+      color: $Black-01;
+      font-size: 38px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      @media (max-width: 576px) {
+        font-size: 18px;
+        margin-bottom: 12px;
+      }
+    }
+
+    .promo-banner-text {
+      color: $Grey-01;
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 32px;
+      @media (max-width: 576px) {
+        font-size: 14px;
+      }
+    }
+
+    .promo-banner-buttons {
+      @include mixins.flex-center;
+      column-gap: 16px;
+
+      button {
+        @include mixins.flex-center;
+        width: 200px;
+        padding: 14px 10px;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 600;
+        @media (max-width: 576px) {
+          width: 133px;
+          font-size: 14px;
+        }
+      }
+
+      .buy-btn {
+        background: $Dark-Green-01;
+        color: $White-General;
+        border: none;
+      }
+
+      .detail-btn {
+        color: $Dark-Green-01;
+        border: 1px solid $Dark-Green-01;
+        background: $Orange-03;
+      }
+    }
+  }
+}

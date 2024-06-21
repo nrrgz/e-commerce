@@ -1,0 +1,49 @@
+@use "../../../../styles/mixins.scss";
+@import "../../../../styles/variables";
+
+.related-product {
+  margin: 32px 120px 120px 120px;
+
+  @media (max-width:576px) {
+    margin: 24px 24px 56px 24px;
+  }
+
+  .related-product-header {
+    @include mixins.flex-center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+
+    h2 {
+      color: $Black-01;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 140%;
+      letter-spacing: -0.2px;
+    }
+
+    button {
+      @include mixins.flex-center;
+      padding: 8px 16px;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 8px;
+      border: 1px solid $Dark-Green-01;
+      color: $Dark-Green-01;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 140%;
+      letter-spacing: -0.2px;
+      background: none;
+    }
+  }
+
+  .card-related-product {
+    .card-products {
+      @include mixins.flex-center;
+      justify-content: space-between;
+      column-gap: 24px;
+      flex-wrap: wrap;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@use "../../../../../styles/mixins.scss";
+@import "../../../../../styles/variables";
+
+.article {
+  @include mixins.flex-center;
+  flex-direction: column;
+  width: 384px;
+
+  @media (max-width: 576px) {
+    width: 335px;
+  }
+
+  img {
+    width: 384px;
+    height: 280px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+
+
+    @media (max-width: 576px) {
+      width: 335px;
+      height: 180px;
+    }
+  }
+
+  .article-description {
+    .article-date {
+      margin-bottom: 12px;
+      color: $Grey-01;
+      font-size: 16px;
+      font-weight: 400;
+
+      @media (max-width: 576px) {
+        font-size: 14px;
+      }
+    }
+
+    h3 {
+      color: $Black-01;
+      font-size: 20px;
+      font-weight: 600;
+
+      @media (max-width: 576px) {
+        font-size: 16px;
+      }
+    }
+
+    p {
+      color: $Grey-01;
+      font-size: 16px;
+      font-weight: 400;
+
+      @media (max-width: 576px) {
+        font-size: 14px;
+      }
+    }
+  }
+}

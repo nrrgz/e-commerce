@@ -1,0 +1,107 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables";
+
+.modal-overlay {
+  @include position($position: fixed, $top: 0, $left: 0);
+  @include container($width: 100%, $height: 100%, $background: rgba(0, 0, 0, 0.5));
+  @include flex($align: center, $justify: center);
+  z-index: 2;
+
+  .modal {
+    @include container($width: 440px, $background: $White-General, $border-r: 8px, $border: 1px solid $dGrey-01);
+    @include flex($direction: column);
+    padding: 24px;
+    padding-top: 32px;
+    box-shadow: 0px 4px 70px 0px rgba(129, 139, 156, 0.20);
+
+    @media (max-width: 576px) {
+      margin: 0 24px 0 24px;
+    }
+
+    h2 {
+      @include font($color: $Black-01, $size: 24px, $weight: 600, $height: 140%);
+      letter-spacing: -0.2px;
+      margin-bottom: 32px;
+
+      @media (max-width: 576px) {
+        @include font($size: 20px);
+      }
+    }
+
+    .sign-in-input {
+      @include flex($direction: column, $align: flex-start, $gap: 8px);
+      margin-bottom: 16px;
+
+      h4 {
+        @include font($color: $Black-01, $size: 16px, $weight: 600, $height: 140%);
+        letter-spacing: -0.2px;
+      }
+
+      input {
+        @include flex($align: center, $gap: 10px);
+        @include container($height: 46px, $border: none, $border-r: 12px, $background: $dGrey-01);
+        padding: 10px 16px;
+        align-self: stretch;
+        outline: none;
+      }
+    }
+
+    .sign-in-input-text {
+      @include font($color: $Dark-Green-03, $size: 14px, $height: 160%, $weight: 500);
+      text-align: right;
+      margin-bottom: 32px;
+    }
+
+    button {
+      @include flex($align: center, $justify: center, $gap: 10px);
+      @include container($border: none, $border-r: 8px, $background: $Dark-Green-01, $height: 48px);
+      @include font($color: $White-General, $size: 16px, $weight: 600, $height: 140%);
+      padding: 11px 10px;
+      text-align: center;
+      letter-spacing: -0.2px;
+      margin-bottom: 32px;
+      cursor: pointer;
+    }
+
+    .other-method {
+      @include font($color: #818B9C, $size: 14px, $weight: 500, $height: 160%);
+      @include position($position: relative);
+      text-align: center;
+      margin-bottom: 32px;
+      cursor: pointer;
+
+      &:before {
+        @include position($position: absolute, $top: 50%, $left: 10px);
+        @include container($width: 100px, $height: 1px, $background: $dGrey-01);
+        content: "";
+        z-index: 1;
+      }
+
+      &:after {
+        @include position($position: absolute, $top: 50%, $right: 10px);
+        @include container($width: 100px, $height: 1px, $background: $dGrey-01);
+        content: "";
+        z-index: 1;
+      }
+    }
+
+
+    .sign-in-fb {
+      @include flex($align: center, $justify: center, $gap: 10px);
+      @include container($border: 1px solid $dGrey-01, $border-r: 8px, $height: 48px);
+      padding: 12px 10px;
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+        cursor: pointer;
+
+        p {
+          @include font($color: $Black-01, $size: 16px, $weight: 600, $height: 160%);
+          text-align: center;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

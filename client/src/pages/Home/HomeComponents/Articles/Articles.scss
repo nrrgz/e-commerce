@@ -1,0 +1,61 @@
+@use "../../../../styles/mixins.scss";
+@import "../../../../styles/variables";
+
+.articles {
+  @media (min-width: 576px) {
+    padding: 0px 120px 120px 120px;
+  }
+  
+  @media (max-width: 576px) {
+    padding: 0px 24px 60px 24px;
+  }
+
+  .articles-header {
+    @include mixins.flex-center;
+    justify-content: space-between;
+    margin-bottom: 52px;
+
+    @media (max-width: 576px) {
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      color: $Black-01;
+      font-size: 38px;
+      font-weight: 600;
+
+      @media (max-width: 576px) {
+        font-size: 18px;
+      }
+    }
+
+    button {
+      @include mixins.flex-center;
+      padding: 10px 16px;
+      justify-content: center;
+      gap: 10px;
+      color: $Dark-Green-01;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+      background: $White-General;
+      border-radius: 8px;
+      border: 1px solid $Dark-Green-01;
+
+      @media (max-width: 576px) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .card-articles {
+    @include mixins.flex-center;
+    justify-content: space-between;
+    column-gap: 24px;
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      row-gap: 24px;
+    }
+  }
+}
