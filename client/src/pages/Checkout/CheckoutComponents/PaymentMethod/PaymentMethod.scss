@@ -1,9 +1,8 @@
-@use "../../../../styles/mixins.scss";
+@import "../../../../styles/mixins.scss";
 @import "../../../../styles/variables";
 
 .payment-method {
-  border-radius: 12px;
-  border: 1px solid $dGrey-01;
+  @include container($border-r: 12px, $border: 1px solid $dGrey-01);
   padding: 24px;
 
   @media (max-width: 576px) {
@@ -11,16 +10,13 @@
   }
 
   h2 {
-    color: $Black-01;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 140%;
+    @include font($color: $Black-01, $size: 20px, $weight: 600, $height: 140%);
     letter-spacing: -0.2px;
     margin-bottom: 24px
   }
 
   .payment-line {
-    @include mixins.flex-center;
+    @include flex($align: center);
     padding-bottom: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid $dGrey-01;
@@ -33,61 +29,45 @@
     }
 
     input {
-      width: 20px;
-      height: 20px;
+      @include container($width: 20px, $height: 20px);
 
       @media (max-width: 576px) {
-        width: 16px;
-        height: 16px;
+        @include container($width: 16px, $height: 16px);
       }
     }
 
     .payment-img {
-      @include mixins.flex-center;
-      justify-content: center;
-      width: 100px;
-      height: 52px;
-      border-radius: 8px;
-      background: $lGrey-02;
+      @include container($width: 100px, $height: 52px, $border-r: 8px, $background: $lGrey-02);
+      @include flex($align: center, $justify: center);
 
       img {
         @media (max-width: 576px) {
-          height: 38px;
+          @include container($height: 38px);
         }
       }
 
       @media (max-width: 576px) {
-        width: 56px;
+        @include container($width: 56px);
       }
     }
 
     .payment-method-details {
-      @include mixins.flex-center;
-      align-items: flex-start;
-      flex-direction: column;
-      row-gap: 4px;
+      @include flex($align: flex-start, $gap: 4px, $direction: column);
 
       h3 {
-        color: $Black-01;
-        font-size: 20px;
-        font-weight: 600;
-        line-height: 140%;
+        @include font($color: $Black-01, $size: 20px, $weight: 600, $height: 140%);
         letter-spacing: -0.2px;
 
         @media (max-width: 576px) {
-          font-size: 12px;
+          @include font($size: 12px);
         }
       }
 
       p {
-        color: $Grey-01;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 160%;
-
+        @include font($color: $Grey-01, $size: 16px, $weight: 400, $height: 160%);
 
         @media (max-width: 576px) {
-          font-size: 10px;
+          @include font($size: 10px);
         }
       }
     }

@@ -1,18 +1,17 @@
-@use "../../../../styles/mixins.scss";
+@import "../../../../styles/mixins.scss";
 @import "../../../../styles/variables";
 
 .articles {
   @media (min-width: 576px) {
     padding: 0px 120px 120px 120px;
   }
-  
+
   @media (max-width: 576px) {
     padding: 0px 24px 60px 24px;
   }
 
   .articles-header {
-    @include mixins.flex-center;
-    justify-content: space-between;
+    @include flex($align: center, $justify: space-between);
     margin-bottom: 52px;
 
     @media (max-width: 576px) {
@@ -20,42 +19,31 @@
     }
 
     h2 {
-      color: $Black-01;
-      font-size: 38px;
-      font-weight: 600;
+      @include font($color: $Black-01, $size: 38px, $weight: 600);
 
       @media (max-width: 576px) {
-        font-size: 18px;
+        @include font($size: 18px);
       }
     }
 
     button {
-      @include mixins.flex-center;
+      @include flex($align: center, $justify: center, $gap: 10px);
+      @include font($color: $Dark-Green-01, $size: 18px, $weight: 600);
+      @include container($border-r: 8px, $border: 1px solid $Dark-Green-01, $background: $White-General);
       padding: 10px 16px;
-      justify-content: center;
-      gap: 10px;
-      color: $Dark-Green-01;
       text-align: center;
-      font-size: 18px;
-      font-weight: 600;
-      background: $White-General;
-      border-radius: 8px;
-      border: 1px solid $Dark-Green-01;
 
       @media (max-width: 576px) {
-        font-size: 14px;
+        @include font($size: 14px);
       }
     }
   }
 
   .card-articles {
-    @include mixins.flex-center;
-    justify-content: space-between;
-    column-gap: 24px;
+    @include flex($align: center, $justify: space-between, $gap: 24px);
 
     @media (max-width: 576px) {
-      flex-direction: column;
-      row-gap: 24px;
+      @include flex($direction: column, $gap: 24px);
     }
   }
 }

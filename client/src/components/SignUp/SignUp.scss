@@ -1,161 +1,107 @@
-@use "../../styles/mixins.scss";
+@import "../../styles/mixins.scss";
 @import "../../styles/variables";
 
 .modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include position($position: fixed, $top: 0, $left: 0);
+  @include container($width: 100%, $height: 100%, $background: rgba(0, 0, 0, 0.5));
+  @include flex($align: center, $justify: center);
   z-index: 2;
 
   .modal {
-    width: 440px;
+    @include container($width: 440px, $background: $White-General, $border-r: 8px, $border: 1px solid $dGrey-01);
+    @include flex($direction: column);
     padding: 24px;
     padding-top: 32px;
-    border-radius: 8px;
-    border: 1px solid $dGrey-01;
-    background: $White-General;
     box-shadow: 0px 4px 70px 0px rgba(129, 139, 156, 0.20);
-    display: flex;
-    flex-direction: column;
 
     @media (max-width: 576px) {
       margin: 0 24px 0 24px;
     }
 
     h2 {
-      color: $Black-01;
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 140%;
+      @include font($color: $Black-01, $size: 24px, $weight: 600, $height: 140%);
       letter-spacing: -0.2px;
       margin-bottom: 32px;
 
       @media (max-width: 576px) {
-        font-size: 20px;
+        @include font($size: 20px);
       }
     }
 
     .sign-in-input {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      row-gap: 8px;
+      @include flex($direction: column, $align: flex-start, $gap: 8px);
       margin-bottom: 16px;
 
       h4 {
-        color: $Black-01;
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 140%;
+        @include font($color: $Black-01, $size: 16px, $weight: 600, $height: 140%);
         letter-spacing: -0.2px;
       }
 
       input {
-        @include mixins.flex-center;
-        height: 46px;
+        @include flex($align: center, $gap: 10px);
+        @include container($height: 46px, $border: none, $border-r: 12px, $background: $dGrey-02);
         padding: 10px 16px;
-        gap: 10px;
         align-self: stretch;
-        border: none;
         outline: none;
-        border-radius: 12px;
-        background: $dGrey-03;
       }
     }
 
     .sign-in-input-text {
-      color: $Dark-Green-03;
+      @include font($color: $Dark-Green-03, $size: 14px, $height: 160%, $weight: 500);
       text-align: right;
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 160%;
       margin-bottom: 32px;
     }
 
     button {
-      @include mixins.flex-center;
-      height: 48px;
+      @include flex($align: center, $justify: center, $gap: 10px);
+      @include container($border: none, $border-r: 8px, $background: $Dark-Green-01, $height: 48px);
+      @include font($color: $White-General, $size: 16px, $weight: 600, $height: 140%);
       padding: 11px 10px;
-      justify-content: center;
-      gap: 10px;
-      border: none;
-      border-radius: 8px;
-      background: $Dark-Green-01;
-      color: $White-General;
       text-align: center;
-      font-size: 16px;
-      font-weight: 600;
-      line-height: 140%;
       letter-spacing: -0.2px;
       margin-bottom: 32px;
       cursor: pointer;
     }
 
     .other-method {
-      color: #818B9C;
+      @include position($position: relative);
+      @include font($color: #818B9C, $size: 14px, $weight: 500, $height: 160%);
       text-align: center;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 160%;
       margin-bottom: 32px;
-      position: relative;
       cursor: pointer;
 
       &:before {
+        @include position($position: absolute, $top: 50%, $left: 10px);
+        @include container($width: 100px, $height: 1px, $background: $dGrey-01);
         content: "";
-        position: absolute;
-        left: 10px;
-        top: 50%;
-        width: 100px;
-        height: 1px;
-        background: $dGrey-01;
         z-index: 1;
       }
 
       &:after {
+        @include position($position: absolute, $top: 50%, $right: 10px);
+        @include container($width: 100px, $height: 1px, $background: $dGrey-01);
         content: "";
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        width: 100px;
-        height: 1px;
-        background: $dGrey-01;
         z-index: 1;
       }
     }
 
 
     .sign-in-fb {
-      @include mixins.flex-center;
-      justify-content: center;
-      height: 48px;
+      @include flex($align: center, $justify: center, $gap: 10px);
+      @include container($border: 1px solid $dGrey-01, $border-r: 8px, $height: 48px);
       padding: 12px 10px;
-      gap: 10px;
-      border-radius: 8px;
-      border: 1px solid $dGrey-01;
       cursor: pointer;
 
       a {
         text-decoration: none;
         cursor: pointer;
+
         p {
-          color: $Black-01;
+          @include font($color: $Black-01, $size: 16px, $weight: 600, $height: 160%);
           text-align: center;
-          font-size: 16px;
-          font-weight: 600;
-          line-height: 160%;
           margin-bottom: 0;
         }
       }
     }
   }
 }
-

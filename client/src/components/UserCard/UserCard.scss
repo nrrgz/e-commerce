@@ -1,168 +1,116 @@
-@use "../../styles/mixins.scss";
+@import "../../styles/mixins.scss";
 @import "../../styles/variables";
 
 .modal-overlay-card {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include position($position: relative, $top: 0, $left: 0);
+  @include container($width: 100%, $height: 100%, $background: rgba(0, 0, 0, 0.5));
+  @include flex($align: center, $justify: center);
   z-index: 2;
 
   .modal-card {
-    position: absolute;
-    top: 40px;
-    right: 0;
-    width: 410px;
+    @include container($width: 410px, $background: $White-General, $border-r: 8px, $border: 1px solid $dGrey-01);
+    @include flex($direction: column);
+    @include position($position: absolute, $top: 40px, $right: 0);
     padding: 24px;
     padding-top: 32px;
-    border-radius: 8px;
-    border: 1px solid $dGrey-01;
-    background: $White-General;
     box-shadow: 0px 4px 70px 0px rgba(129, 139, 156, 0.20);
-    display: flex;
-    flex-direction: column;
 
     .user-card {
       .user-detail {
-        @include mixins.flex-center;
-        gap: 16px;
+        @include flex($align: center, $gap: 16px);
         padding-bottom: 24px;
         margin-bottom: 24px;
         border-bottom: 1px solid $dGrey-01;
 
         .user-info {
-          display: flex;
-          flex-direction: column;
-          gap: 4px;
+          @include flex($direction: column, $gap: 4px);
 
           h3 {
+            @include font($color: $Black-01, $size: 20px, $weight: 600, $height: 140%);
             overflow: hidden;
-            color: $Black-01;
             text-overflow: ellipsis;
             white-space: nowrap;
-            font-size: 20px;
-            font-weight: 600;
-            line-height: 140%;
             letter-spacing: -0.2px;
           }
 
           h5 {
-            color: $Grey-01;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 160%;
+            @include font($color: $Grey-01, $size: 16px, $weight: 600, $height: 160%);
           }
         }
 
         img {
-          width: 58px;
-          height: 58px;
+          @include container($width: 58px, $height: 58px);
         }
       }
 
       .wallet {
-        display: flex;
-        flex-direction: column;
+        @include flex($direction: column, $gap: 8px);
         padding-bottom: 24px;
         margin-bottom: 24px;
         border-bottom: 1px solid $dGrey-01;
-        gap: 8px;
 
         h2 {
+          @include font($color: $Grey-01, $size: 14px, $weight: 500, $height: 160%);
           margin-bottom: 12px;
-          color: $Grey-01;
-          font-size: 14px;
-          font-weight: 500;
-          line-height: 160%;
         }
 
         .wallet-line {
-          @include mixins.flex-center;
-          justify-content: space-between;
+          @include flex($align: center, $justify: space-between);
 
           p {
-            color: $Black-01;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 160%;
+            @include font($color: $Black-01, $size: 16px, $weight: 400, $height: 160%);
           }
 
           .wallet-column {
-            @include mixins.flex-center;
-            gap: 12px;
+            @include flex($align: center, $gap: 12px);
 
             img {
-              width: 24px;
-              height: 24px;
+              @include container($width: 24px, $height: 24px);
             }
 
             h4 {
-              color: $Grey-01;
-              font-size: 16px;
-              font-weight: 400;
-              line-height: 160%;
+              @include font($color: $Grey-01, $size: 16px, $weight: 400, $height: 160%);
             }
           }
         }
       }
 
       .user-menu {
-        display: flex;
-        flex-direction: column;
+        @include flex($direction: column, $gap: 8px);
         padding-bottom: 24px;
         margin-bottom: 24px;
         border-bottom: 1px solid $dGrey-01;
-        gap: 8px;
 
         h2 {
+          @include font($color: $Grey-01, $size: 14px, $weight: 500, $height: 160%);
           margin-bottom: 12px;
-          color: $Grey-01;
-          font-size: 14px;
-          font-weight: 500;
-          line-height: 160%;
         }
 
         .menu-line {
-          @include mixins.flex-center;
+          @include flex($align: center);
 
           h4 {
-            color: $Grey-01;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 160%;
+            @include font($color: $Grey-01, $size: 16px, $weight: 400, $height: 160%);
           }
 
           img {
-            width: 24px;
-            height: 24px;
+            @include container($width: 24px, $height: 24px);
             margin-right: 12px;
           }
         }
       }
 
       .sign-out {
-        @include mixins.flex-center;
-        gap: 12px;
-
+        @include flex($align: center, $gap: 12px);
 
         img {
-          width: 24px;
-          height: 24px;
+          @include container($width: 24px, $height: 24px);
         }
 
         button {
+          @include font($color: #E04124, $size: 16px, $weight: 500, $height: 160%);
+          @include container($background: none, $border: none);
           cursor: pointer;
-          color: #E04124;
-          font-size: 16px;
-          font-weight: 500;
-          line-height: 160%;
-          background: none;
-          border: none;
         }
       }
     }

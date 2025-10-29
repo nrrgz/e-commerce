@@ -1,5 +1,5 @@
 import React from 'react'
-import "./ProductFeatures.scss"
+// import "./ProductFeatures.scss"
 import Tick from '../../../../assets/icons/tick-circle.svg'
 
 const ProductFeatures = ({ products }) => {
