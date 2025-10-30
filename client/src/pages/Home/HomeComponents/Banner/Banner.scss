@@ -1,19 +1,16 @@
-@use "../../../../styles/mixins.scss";
+@import "../../../../styles/mixins.scss";
 @import "../../../../styles/variables";
 
 .banner-wrapper {
-  @include mixins.flex-center;
-  justify-content: space-between;
-  background: $dGrey-02;
+  @include flex($align: center, $justify: space-between);
+  @include container($background: $dGrey-02);
 
   @media (max-width: 576px) {
-    flex-direction: column;
-    justify-content: center;
+    @include flex($direction: column, $justify: center);
   }
 
   .main-banner {
-    display: flex;
-    flex-direction: column;
+    @include flex($direction: column);
     padding-left: 120px;
 
     @media (max-width: 576px) {
@@ -21,79 +18,63 @@
     }
 
     h1 {
-      color: $Black-01;
-      font-size: 58px;
-      font-weight: 700;
+      @include font($color: $Black-01, $size: 58px, $weight: 700);
       margin-bottom: 16px;
 
       @media (max-width: 576px) {
-        font-size: 28px;
+        @include font($size: 28px);
       }
     }
 
     p {
-      color: $Grey-01;
-      font-size: 18px;
-      font-weight: 400;
+      @include font($color: $Grey-01, $size: 18px, $weight: 400);
       margin-bottom: 32px;
 
       @media (max-width: 576px) {
-        font-size: 14px;
+        @include font($size: 14px);
       }
     }
 
     .banner-buttons {
-      @include mixins.flex-center;
-      column-gap: 16px;
+      @include flex($align: center, $gap: 16px);
 
       @media (max-width: 576px) {
-        flex-direction: column;
-        row-gap: 16px;
+        @include flex($direction: column, $gap: 16px);
       }
 
       button {
-        @include mixins.flex-center;
-        width: 200px;
+        @include flex($align: center, $justify: center, $gap: 10px);
+        @include container($width: 200px, $border-r: 8px);
         padding: 14px 10px;
-        justify-content: center;
-        gap: 10px;
-        border-radius: 8px;
 
         @media (max-width: 576px) {
-          width: 327px;
-          height: 48px;
+          @include container($width: 327px, $height: 48px);
           padding: 12px 10px;
         }
       }
 
       .button-buy {
-        background: $Dark-Green-01;
-        border: none;
-        color: $White-General;
+        @include container($background: $Dark-Green-01, $border: none);
+        @include font($color: $White-General, $size: 18px, $weight: 600);
         text-align: center;
-        font-size: 18px;
-        font-weight: 600;
       }
 
       .button-detail {
-        border: 1px solid $Dark-Green-01;
-        color: $Dark-Green-01;
+        @include container($background: $White-General, $border: 1px solid $Dark-Green-01);
+        @include font($color: $Dark-Green-01, $size: 18px, $weight: 600);
         text-align: center;
-        font-size: 18px;
-        font-weight: 600;
-        background: $White-General;
       }
     }
   }
 
   .banner-img {
     img {
-      height: 620px;
+      @include container($height: 620px);
       max-width: 827px;
-      
+
       @media (max-width: 576px) {
+        @include container($height: auto);
         max-width: 100%;
-        height: auto;
       }
     }
   }

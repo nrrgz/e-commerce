@@ -1,4 +1,4 @@
-@use "../../../../styles/mixins.scss";
+@import "../../../../styles/mixins.scss";
 @import "../../../../styles/variables";
 
 .product-features {
@@ -12,7 +12,7 @@
   }
 
   .features-tab {
-    display: flex;
+    @include flex();
     border-bottom: 1px solid $dGrey-01;
     margin-bottom: 32px;
 
@@ -21,25 +21,20 @@
     }
 
     button {
-      color: $Grey-01;
+      @include font($color: $Grey-01, $size: 18px, $weight: 500);
+      @include container($background: none, $border: none);
+      @include flex($justify: center, $align: center);
       text-align: center;
-      font-size: 18px;
-      font-weight: 500;
-      background: none;
-      border: none;
-      display: flex;
       padding: 14px 24px;
-      justify-content: center;
-      align-items: center;
 
       @media (max-width: 576px) {
-        font-size: 14px;
+        @include font($size: 14px);
       }
     }
 
     .selected {
+      @include font($color: $Dark-Green-01);
       border-bottom: 2px solid $Dark-Green-01;
-      color: $Dark-Green-01;
 
       @media (max-width: 576px) {
         white-space: nowrap;
@@ -48,38 +43,31 @@
   }
 
   .product-title {
-    color: $Black-01;
-    font-size: 28px;
-    font-weight: 600;
+    @include font($color: $Black-01, $size: 28px, $weight: 600);
     margin-bottom: 12px;
 
     @media (max-width: 576px) {
-      font-size: 18px;
+      @include font($size: 18px);
     }
   }
 
   .product-desc {
-    color: $Grey-01;
-    font-size: 16px;
-    font-weight: 400;
-    width: 75%;
+    @include font($color: $Grey-01, $size: 16px, $weight: 400);
+    @include container($width: 75%);
     line-height: 160%;
     margin-bottom: 32px;
 
     @media (max-width: 576px) {
-      font-size: 12px;
-      width: 100%;
+      @include font($size: 12px);
+      @include container($width: 100%);
     }
   }
 
   .details {
-    display: flex;
-    align-items: flex-start;
-    column-gap: 32px;
+    @include flex($align: flex-start, $gap: 32px);
 
     @media (max-width: 576px) {
-      flex-direction: column;
-      row-gap: 32px;
+      @include flex($direction: column, $gap: 32px);
     }
 
     .specification {

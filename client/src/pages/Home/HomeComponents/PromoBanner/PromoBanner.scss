@@ -1,29 +1,25 @@
-@use "../../../../styles/mixins.scss";
+@import "../../../../styles/mixins.scss";
 @import "../../../../styles/variables";
 
 .promo-banner {
-  @include mixins.flex-center;
-  border-radius: 16px;
-  background: $Orange-03;
+  @include flex($align: center);
+  @include container($background: $Orange-03, $border-r: 16px);
   margin: 100px 120px 100px 120px;
   padding: 0px 135px 0px 80px;
 
   @media (max-width: 576px) {
-    flex-direction: column;
+    @include flex($direction: column, $align: flex-start);
     padding: 32px 24px 21px 24px;
-    align-items: flex-start;
     margin: 100px 24px 100px 24px;
   }
 
   .promo-banner-img {
     img {
-      width: 382px;
-      height: 430px;
+      @include container($width: 382px, $height: 430px);
       flex-shrink: 0;
 
       @media (max-width: 576px) {
-        width: 157px;
-        height: 176px;
+        @include container($width: 157px, $height: 176px);
         margin-bottom: 32px;
       }
     }
@@ -35,56 +31,48 @@
     }
 
     .promo-banner-title {
-      color: $Black-01;
-      font-size: 38px;
-      font-weight: 600;
+      @include font($color: $Black-01, $size: 38px, $weight: 600);
       margin-bottom: 16px;
+
       @media (max-width: 576px) {
-        font-size: 18px;
+        @include font($size: 18px);
         margin-bottom: 12px;
       }
     }
 
     .promo-banner-text {
-      color: $Grey-01;
-      font-size: 18px;
-      font-weight: 400;
+      @include font($color: $Grey-01, $size: 18px, $weight: 400);
       margin-bottom: 32px;
+
       @media (max-width: 576px) {
-        font-size: 14px;
+        @include font($size: 14px);
       }
     }
 
     .promo-banner-buttons {
-      @include mixins.flex-center;
-      column-gap: 16px;
+      @include flex($align: center, $gap: 16px);
 
       button {
-        @include mixins.flex-center;
-        width: 200px;
+        @include flex($align: center, $justify: center, $gap: 10px);
+        @include container($width: 200px, $border-r: 8px);
+        @include font($size: 18px, $weight: 600);
         padding: 14px 10px;
-        justify-content: center;
-        gap: 10px;
-        border-radius: 8px;
         text-align: center;
-        font-size: 18px;
-        font-weight: 600;
+
         @media (max-width: 576px) {
-          width: 133px;
-          font-size: 14px;
+          @include container($width: 133px);
+          @include font($size: 14px);
         }
       }
 
       .buy-btn {
-        background: $Dark-Green-01;
-        color: $White-General;
-        border: none;
+        @include container($background: $Dark-Green-01, $border: none);
+        @include font($color: $White-General);
       }
 
       .detail-btn {
-        color: $Dark-Green-01;
-        border: 1px solid $Dark-Green-01;
-        background: $Orange-03;
+        @include container($background: $Orange-03, $border: 1px solid $Dark-Green-01);
+        @include font($color: $Dark-Green-01);
       }
     }
   }

@@ -1,57 +1,46 @@
-@use "../../../../../styles/mixins.scss";
+@import "../../../../../styles/mixins.scss";
 @import "../../../../../styles/variables";
 
 .article {
-  @include mixins.flex-center;
-  flex-direction: column;
-  width: 384px;
+  @include flex($align: center, $direction: column);
+  @include container($width: 384px);
 
   @media (max-width: 576px) {
-    width: 335px;
+    @include container($width: 335px);
   }
 
   img {
-    width: 384px;
-    height: 280px;
-    border-radius: 8px;
+    @include container($width: 384px, $height: 280px, $border-r: 8px);
     margin-bottom: 16px;
 
-
     @media (max-width: 576px) {
-      width: 335px;
-      height: 180px;
+      @include container($width: 335px, $height: 180px);
     }
   }
 
   .article-description {
     .article-date {
+      @include font($color: $Grey-01, $size: 16px, $weight: 400);
       margin-bottom: 12px;
-      color: $Grey-01;
-      font-size: 16px;
-      font-weight: 400;
 
       @media (max-width: 576px) {
-        font-size: 14px;
+        @include font($size: 14px);
       }
     }
 
     h3 {
-      color: $Black-01;
-      font-size: 20px;
-      font-weight: 600;
+      @include font($color: $Black-01, $size: 20px, $weight: 600);
 
       @media (max-width: 576px) {
-        font-size: 16px;
+        @include font($size: 16px);
       }
     }
 
     p {
-      color: $Grey-01;
-      font-size: 16px;
-      font-weight: 400;
+      @include font($color: $Grey-01, $size: 16px, $weight: 400);
 
       @media (max-width: 576px) {
-        font-size: 14px;
+        @include font($size: 14px);
       }
     }
   }
